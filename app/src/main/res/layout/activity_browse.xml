@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_browse.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/buttonByCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By Category" />
+
+    <Button
+        android:id="@+id/buttonByAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By Author" />
+
+    <Button
+        android:id="@+id/buttonByGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By Genre" />
+
+</LinearLayout>
