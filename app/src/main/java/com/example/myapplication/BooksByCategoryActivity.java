@@ -1,5 +1,7 @@
 package com.example.myapplication;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -48,11 +50,25 @@ public class BooksByCategoryActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 bookList.clear();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Book book = snapshot.getValue(Book.class);
-                    bookList.add(book);
+
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        Book book = snapshot.getValue(Book.class);
+                        bookList.add(book);
+                    }
                 }
-                bookAdapter.notifyDataSetChanged();
+
+                if (bookList.isEmpty()) {
+                    // No books found
+                    TextView textViewMessage = findViewById(R.id.textViewMessage);
+                    textViewMessage.setVisibility(View.VISIBLE);
+                    textViewMessage.setText("Oops, books not found");
+                } else {
+                    // Books found
+                    TextView textViewMessage = findViewById(R.id.textViewMessage);
+                    textViewMessage.setVisibility(View.GONE);
+                    bookAdapter.notifyDataSetChanged();
+                }
             }
 
             @Override

@@ -19,4 +19,14 @@
         android:layout_height="wrap_content"
         android:text="Submit" />
 
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonSubmit"
+        android:text="Oops, no book found with that ASIN at our library"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:visibility="gone" />
+
 </LinearLayout>

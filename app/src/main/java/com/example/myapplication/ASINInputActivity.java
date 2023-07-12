@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ public class ASINInputActivity extends AppCompatActivity {
 
     private EditText editTextASIN;
     private Button buttonSubmit;
+    private TextView textViewMessage;
 
     private DatabaseReference booksRef;
 
@@ -28,8 +30,10 @@ public class ASINInputActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asin_input);
+
         editTextASIN = findViewById(R.id.editTextASIN);
         buttonSubmit = findViewById(R.id.buttonSubmit);
+        textViewMessage = findViewById(R.id.textViewMessage);
 
         booksRef = FirebaseDatabase.getInstance().getReference("Books");
 
@@ -56,7 +60,9 @@ public class ASINInputActivity extends AppCompatActivity {
                         }
                     }
                 }
-                Toast.makeText(ASINInputActivity.this, "Book not found", Toast.LENGTH_SHORT).show();
+                // No book found
+                textViewMessage.setVisibility(View.VISIBLE);
+                textViewMessage.setText("Oops, no book found with that ASIN at our library");
             }
 
             @Override
