@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -83,7 +84,8 @@ public class SignupActivity extends AppCompatActivity {
                             // Show a success message
                             Toast.makeText(SignupActivity.this, "Sign up successful!", Toast.LENGTH_SHORT).show();
 
-                            // Optional: You may want to redirect the user to the login screen or perform other actions here.
+                            // Go back to MainActivity
+                            finish();
                         }
                     }
 

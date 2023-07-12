@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,10 +18,42 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AccountSummaryActivity extends AppCompatActivity {
 
+    private Button buttonDetails;
+    private Button buttonChangePassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_summary);
+
+        buttonDetails = findViewById(R.id.buttonDetails);
+        buttonChangePassword = findViewById(R.id.buttonChangePassword);
+
+        buttonDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDetailsPage();
+            }
+        });
+
+        buttonChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openChangePasswordPage();
+            }
+        });
+    }
+
+    private void openDetailsPage() {
+        // Handle Details button click
+        // Add your logic here
+        Toast.makeText(this, "Details button clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    private void openChangePasswordPage() {
+        // Handle Change Password button click
+        // Add your logic here
+        Toast.makeText(this, "Change Password button clicked", Toast.LENGTH_SHORT).show();
     }
 }
 

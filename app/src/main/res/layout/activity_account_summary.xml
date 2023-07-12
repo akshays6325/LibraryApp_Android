@@ -7,12 +7,18 @@
     android:padding="16dp">
 
     <!-- activity_account_summary_update.xml -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This section is under development.\n\nIt will be updated in the next version."
-        android:textSize="18sp"
-        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/buttonDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Details" />
+
+    <Button
+        android:id="@+id/buttonChangePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Password" />
 
 
 </LinearLayout>
