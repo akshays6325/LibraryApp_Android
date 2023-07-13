@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">My Library</string>
+    <string-array name="categories_array">
+        <item>Documentary</item>
+        <item>Novel</item>
+        <item>Sci-Fi</item>
+        <item>Fantasy</item>
+        <item>Mystery</item>
+        <!-- Add more categories if needed -->
+    </string-array>
+
+    <string-array name="genres_array">
+        <item>Fiction</item>
+        <item>Non-Fiction</item>
+        <!-- Add more genres as needed -->
+    </string-array>
+
 </resources>

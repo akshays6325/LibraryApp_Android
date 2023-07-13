@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- activity_add_book.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,37 +8,56 @@
     <EditText
         android:id="@+id/editTextId"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="ID"
-        android:inputType="text" />
+        android:layout_height="48dp"
+        android:hint="Book ID" />
 
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name"
-        android:inputType="text" />
+        android:layout_height="48dp"
+        android:hint="Book Name" />
 
     <EditText
         android:id="@+id/editTextAuthor"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Author"
-        android:inputType="text" />
+        android:layout_height="48dp"
+        android:hint="Author" />
 
-    <EditText
-        android:id="@+id/editTextCategory"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Category"
-        android:inputType="text" />
+        android:text="Category"
+        android:labelFor="@+id/spinnerCategory"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/editTextGenre"
+    <Spinner
+        android:id="@+id/spinnerCategory"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Genre"
-        android:inputType="text" />
+        android:text="Genre"
+        android:labelFor="@+id/spinnerGenre"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spinnerGenre"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" />
+
+
+    <TextView
+        android:id="@+id/textViewAvailability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Availability:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp" />
 
     <RadioGroup
         android:id="@+id/radioGroupAvailable"
@@ -51,6 +69,7 @@
             android:id="@+id/radioButtonYes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="Yes" />
 
         <RadioButton
@@ -60,10 +79,34 @@
             android:text="No" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/buttonSubmit"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textMandatory"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:text="* All fields are mandatory"
+        android:textColor="#FF0000"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_marginTop="8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="Submit" />
+
+        <Button
+            android:id="@+id/buttonLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="Logout" />
+
+    </LinearLayout>
 
 </LinearLayout>
