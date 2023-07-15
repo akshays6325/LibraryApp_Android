@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,9 +31,10 @@ public class AccountSummaryActivity extends AppCompatActivity {
         buttonChangePassword = findViewById(R.id.buttonChangePassword);
 
         buttonDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
+            final MainActivity mainActivity = new MainActivity();@Override
             public void onClick(View v) {
-                openDetailsPage();
+                String userEmail = mainActivity.getUserEmail();
+                openDetailsPage(userEmail);
             }
         });
 
@@ -44,11 +46,13 @@ public class AccountSummaryActivity extends AppCompatActivity {
         });
     }
 
-    private void openDetailsPage() {
-        // Handle Details button click
-        // Add your logic here
-        Toast.makeText(this, "Details button clicked", Toast.LENGTH_SHORT).show();
+    private void openDetailsPage(String email) {
+        // Pass the user email to the DetailsActivity
+        Intent intent = new Intent(AccountSummaryActivity.this, DetailsActivity.class);
+        intent.putExtra("email", email);
+        startActivity(intent);
     }
+
 
     private void openChangePasswordPage() {
         // Handle Change Password button click

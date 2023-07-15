@@ -17,8 +17,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class MainActivity extends AppCompatActivity {
 
+public class MainActivity extends AppCompatActivity {
+    private static String userEmail;
     private EditText editTextEmail;
     private EditText editTextPassword;
     private Button buttonSignIn;
@@ -92,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
                         // User authentication successful
                         isUserFound = true;
                         // Add your code here to handle the authenticated user
+                        // Inside the if statement where user authentication is successful
+                        userEmail = editTextEmail.getText().toString().trim();
                         Toast.makeText(MainActivity.this, "Sign in successful!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                         startActivity(intent);
@@ -110,5 +113,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Error occurred: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+    }
+    public static String getUserEmail(){
+        return userEmail;
     }
 }

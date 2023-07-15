@@ -71,6 +71,7 @@
             android:name=".BookDetailsActivity"
             android:label="Book Details Activity" />
         <activity android:name=".AccountSummaryActivity" />
+        <activity android:name=".DetailsActivity" />
 
     </application>
 
